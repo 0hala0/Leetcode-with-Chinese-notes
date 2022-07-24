@@ -35,7 +35,7 @@ class Solution(object):
                     second_match=(p[j-2] in {s[i-1], '.'})
                     #dp[i][j]=dp[i][j-2]的效果为将"字符+*"整体忽略
                     #dp[i][j]=second_match and dp[i-1][j]的效果为，若s中字符与p中'*'前的字符相等，则忽略s中第i-1个字符
-                    dp[i][j]=dp[i][j-2] or (second_match and dp[i-1][j])
+                    dp[i][j]=dp[i][j-2] or (second_match and dp[i-1][j]
                 else:
                     #无'*'情况直接比较即可
                     dp[i][j]=first_match and dp[i-1][j-1]
